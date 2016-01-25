@@ -1,0 +1,22 @@
+body {
+	text-align: center;
+	background-color: #FF7241;
+	font-family: Georgia, serif;
+	border-radius: 20%;
+}
+.container {
+	margin: auto;
+	background-color: #E88509;
+}
+.welcome {
+	background-color: #FFD958;
+}
+.menu {
+	background-color: #FFD958;
+}
+.item {
+	background-color: #E8E327;
+}
+.menu:nth-child(even) .item{
+	background-color: #B3FF86;
+}
