@@ -18,7 +18,7 @@ h1 {
 	margin: auto;
 	margin-top: 30px;
 }
-.welcome {
+.heading {
 	background-color: #4C1B54;
 	margin: 10px;
 	margin-bottom: 30px;
@@ -30,10 +30,4 @@ h1 {
 	background-color: #222222;
 	border-radius: 15px;
 	margin: 10px;
-}
-.menu a:nth-child(even) .item {
-	background-color: #00A17B;
-}
-.item {
-	padding: 20px;
 }
