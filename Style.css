@@ -5,8 +5,9 @@ body {
 	color: black;
 }
 .container {
-	width: 200px;
+	width: 300px;
 	margin: auto;
+	margin-top: 30px;
 }
 .welcome {
 	background-color: #FFFEFD;
