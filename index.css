@@ -18,10 +18,10 @@ body {
 	background-color: #FFFEFD;
 	border-radius: 15px;
 	margin: 10px;
-	padding-top: 15px;
-	padding-bottom: 15px;
 }
 .menu:nth-child(odd) {
 	background-color: #E8B393;
 	border-radius: 10px;
+	padding-top: 15px;
+	padding-bottom: 15px;
 }
