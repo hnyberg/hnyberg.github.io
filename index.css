@@ -1,6 +1,6 @@
 body {
 	text-align: center;
-	background-color: #FF9754;
+	background-color: #FFFEFD;
 	font-family: Georgia, serif;
 	color: black;
 }
@@ -9,15 +9,19 @@ body {
 	margin: auto;
 }
 .welcome {
-	background-color: #FFEB6B;
+	background-color: #FFFEFD;
 	margin: 10px;
+	padding-bottom: 20px;
+	border-radius: 20px;
 }
 .menu {
-	background-color: #FFEB6B;
+	background-color: #FFFEFD;
 	border-radius: 15px;
 	margin: 10px;
+	padding-top: 15px;
+	padding-bottom: 15px;
 }
-.menu:nth-child(odd) .item{
-	background-color: #B3FF86;
+.menu:nth-child(odd) {
+	background-color: #E8B393;
 	border-radius: 10px;
 }
