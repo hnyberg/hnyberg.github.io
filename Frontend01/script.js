@@ -4,5 +4,13 @@
 // 	https://github.com/hnyberg
 //
 $(document).ready(
-    function(){}
+    function(){
+    	$('#addButton').click(
+    		function(){
+    		}
+    	);
+    }
 );
+function buttonClicked(){
+	$('#itemList').append("<li class='listItem'>Hej</li>");
+}

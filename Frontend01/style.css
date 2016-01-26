@@ -4,32 +4,39 @@
 	https://github.com/hnyberg
 */
 body {
-	background-image: url("http://i.imgur.com/9Zx0eij.jpg");
+	background-image: url("http://i.imgur.com/5CJB5zB.jpg");
 	background-repeat: no-repeat;
 	background-position: center top;
-	background-color: #700300;
+	background-color: #112211;
 	font-family: Georgia, serif;
 	color: white;
 	text-align: center;
+}
+a {
+	color: white;
 }
 .container {
 	width: 320px;
 	margin: auto;
 	margin-top: 30px;
 }
-.heading {
-	background-color: #700300;
-	margin: 10px;
-	margin-bottom: 30px;
-	padding: 15px;
-	border-radius: 10px;
-}
-.menu {
-	background-color: #222222;
+.heading, .menu, .item, .contact {
+	background-color: #334433;
+	opacity: 0.9;
 	border-radius: 15px;
 	margin: 10px;
+	padding: 5px;
 }
-.item {
-	margin: 10px;
-	padding: 15px;
+.menu {
+	margin-bottom: 30px;
+	margin-top: 30px;
+}
+.contact {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+input, button {
+	margin: 5px;
+	width: 100px;
+	background-color: #CCFFCC;
 }

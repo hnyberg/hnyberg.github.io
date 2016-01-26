@@ -3,12 +3,12 @@ body {
 	font-family: Georgia, serif;
 	color: white;
 }
-a {
-	color: white;
-}
 h2, p {
 	margin: 5px;
 	padding: 2px;
+}
+a {
+	color: white;
 }
 h1 {
 	padding: 15px;
