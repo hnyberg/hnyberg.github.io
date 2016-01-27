@@ -24,12 +24,13 @@ a {
 	background-color: #334433;
 	opacity: 0.9;
 	border-radius: 15px;
+	border-bottom: solid black 3px;
 	margin: 10px;
 	padding: 5px;
 }
 .menu {
-	margin-bottom: 30px;
-	margin-top: 30px;
+	margin-bottom: 25px;
+	margin-top: 25px;
 }
 .contact {
 	padding-top: 10px;
@@ -39,4 +40,29 @@ input, button {
 	margin: 5px;
 	width: 100px;
 	background-color: #CCFFCC;
+}
+#forest {
+	list-style-type: none;
+	margin: 10px;
+	padding: 0px;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+
+}
+.tree {
+	padding: 5px;
+	padding-right: 10px;
+	padding-left: 10px;
+	line-height: 25px;
+	border-radius: 25px;
+	margin: 5px;
+	border-bottom: solid black 2px;
+	list-style-type: none;
+}
+.burn {
+	box-shadow: 0 0 8px #DD9933;
+	background-color: #DD9933;
+	color: #DD9933;
 }
