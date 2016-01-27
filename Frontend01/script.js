@@ -19,7 +19,7 @@ $(document).ready(
 					$('#forest').append(tree);
 
 					// Change tree color
-					var clr = 20 + Math.floor(Math.random()*40);
+					var clr = 20 + Math.floor(Math.random()*50);
 					var treeColor = "#" + clr + (clr+20) + clr;
 					$('.tree').last().css("background-color", treeColor);
 
