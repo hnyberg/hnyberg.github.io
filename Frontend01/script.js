@@ -29,7 +29,7 @@ $(document).ready(
 							$(this).css("background-color", "#DD9933");
 							$(this).addClass("burn");
 							$(this).fadeOut(
-								1000,function(){
+								500,function(){
 									$(this).remove();
 								}
 							);
