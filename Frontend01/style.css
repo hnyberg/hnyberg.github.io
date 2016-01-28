@@ -30,10 +30,9 @@ a {
 	padding: 5px;
 }
 .heading, .menu, .contact {
-	/*background: linear-gradient(#334433, #223322)*/
 	background: linear-gradient(
 		to bottom, 
-		rgba(20,30,20,0.2), 
+		rgba(20,30,20,0.5), 
 		rgba(20,30,20,1));
 }
 .menu {
@@ -79,7 +78,7 @@ button {
 	cursor: pointer;
 }
 .burn {
-	box-shadow: 0 -20px 50px #DD9933;
+	box-shadow: 10px -25px 50px #DD9933;
 	background-color: #DD9933;
 	color: #DD9933;
 }
