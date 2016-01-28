@@ -5,7 +5,7 @@
 //
 $(document).ready(
 	function(){
-		$('#addButton').click(
+		$('#plantButton').click(
 			function(event){
 				event.preventDefault();
 				if ($('input').val() !== ""){
