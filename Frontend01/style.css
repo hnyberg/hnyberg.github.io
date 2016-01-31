@@ -7,7 +7,6 @@
 body {
 	background-image: url("forest.jpg");
 	background-repeat: no-repeat;
-	background-position: center top;
 	background-color: #112211;
 
 	font-family: Georgia, serif;
@@ -24,12 +23,11 @@ h1 {
 
 /* Set web page size */
 .container {
-	width: 500px;
 	margin: auto;
 	margin-top: 30px;
 }
 
-.heading, .menu, .item, .contact {
+header, .menu, .item, footer {
 	background-color: #334433;
 	opacity: 0.9;
 	border-radius: 15px;
@@ -37,7 +35,7 @@ h1 {
 	margin: 10px;
 	padding: 5px;
 }
-.heading, .menu, .contact {
+header, .menu, footer {
 	background: linear-gradient(
 		to bottom, 
 		rgba(20,30,20,0.5), 
