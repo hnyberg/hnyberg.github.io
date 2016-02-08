@@ -4,6 +4,29 @@
 	https://github.com/hnyberg
 */
 
+/* Adjust container (all elements) */
+@media (max-width: 500px) {
+	.container {
+		width: 300px;
+	}
+}
+@media (min-width: 501px) {
+	.container {
+		width: 500px;
+	}
+}
+/* Adjust background image size */
+@media (min-width: 371px) {
+	body {
+		background-size: cover; 
+	}
+}
+@media (max-width: 370px) {
+	body {
+		background-size: initial; 
+	}
+}
+
 body {
 	background-image: url("forest.jpg");
 	background-repeat: no-repeat;
