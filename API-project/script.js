@@ -109,34 +109,43 @@ $(document).ready(function(){
 				productSearchValue = $("#productSearchBox").val();
 				APIKey = $("#APIBox").val();
 				APIKey = "Private(-MovieSea-PRD-ad32f3572-693de996";
+				productSearchValue = "batman";
 
 				// Set URL
 				eBayURL = "http://svcs.ebay.com/services/search/FindingService/v1"
 				+ "?OPERATION-NAME=findItemsByKeywords"
 			    + "&SERVICE-VERSION=1.0.0"
 			    + "&SECURITY-APPNAME=" + APIKey
-			    + "&GLOBAL-ID=EBAY-US"
+			    + "&GLOBAL-ID=EBAY-DE"
 			    + "&RESPONSE-DATA-FORMAT=JSON"
-			    + "&jsoncallback=?"
+			    + "&callback=_cb_findItemsByKeywords"
+			    // + "&callback=?"
 			    + "&REST-PAYLOAD"
 			    + "&keywords=" + productSearchValue
 			    + "&paginationInput.entriesPerPage=10";
 
-			    eBayURL = "http://svcs.ebay.com/services/search/FindingService/v1?OPERATION-NAME=findItemsByKeywords&SERVICE-VERSION=1.0.0&SECURITY-APPNAME=Private(-MovieSea-PRD-ad32f3572-693de996&GLOBAL-ID=EBAY-US&RESPONSE-DATA-FORMAT=JSON&jsoncallback=_cb_findItemsByKeywords&REST-PAYLOAD&keywords=rrtyrtyrtyrtyrty&paginationInput.entriesPerPage=10";
+			    // Set callback function
+				function _cb_findItemsByKeywords(eData){
+					$("#productResults").empty();
+					console.log(eBayURL);
+						// eData = eData.findItemsByKeywordsResponse[0];
+					// if (!eData.searchResult[0].hasOwnProperty("item")){
+					// 	$("#productResults").append("<a href="
+					// 		+ eData.itemSearchURL
+					// 		+ "><h3>No Results</h3></a>");
+					// }
+				}
 
-				// Get best product result (eBay US)
-				$.getJSON(eBayURL, _cb_findItemsByKeywords());
+			    // Send request with specific callback
+				$.getJSON(eBayURL, _cb_findItemsByKeywords);
+
+				// Send request with random callback
+				// $.getJSON(eBayURL, function(eData){
+				// 	$("#productResults").empty();
+				// 	console.log(eBayURL);
+				// });
+
 			}, 500);
 		}
 	});
 });
-
-function _cb_findItemsByKeywords(root){
-	$("#productSection").empty();
-	eData = eData.findItemsByKeywordsResponse[0];
-	if (!eData.searchResult[0].hasOwnProperty("item")){
-		$("#productResults").append("<a href="
-			+ eData.itemSearchURL
-			+ "><h3>No Results</h3></a>");
-	}
-}
