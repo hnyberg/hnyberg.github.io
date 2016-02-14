@@ -21,25 +21,55 @@
 	<script type="text/javascript" src="script.js"></script>
 </head>
 <body>
-	<main>
-		<form>
-			<h1>Look up a movie</h1>
-			<input id="searchBox"></input>
-			<button id="searchButton">Search</button>
-		</form>
-		<section id="resultSection">
-			<h2>Best Result:</h2>
-			<section class="resultClass" id="bestMovieSection"></section>
-			<h2>All Results:</h2>
-			<section class="resultClass" id="allMoviesSection"></section>
-			<h2>Ebay Products:</h2>
-			<section class="resultClass" id="productSection"></section>
-		</section>
+	<main id="allMain">
+
+		<!-- All results -->
+		<main id="resultsMain">
+
+			<!-- Movie section -->
+			<main id="movieMain">
+				<form id="movieSearchForm">
+					<h1 class="title">Look up a movie</h1>
+					<table id="movieSearchTable">
+						<tr>
+							<td><label>Movie/Series Title: </label></td>
+							<td><input id="movieSearchBox"></input></td>
+						</tr>
+					</table>
+					<br><button id="movieSearchButton">Search Movie</button>
+				</form>
+				<h2>Best Result:</h2>
+				<section class="movieResultClass" id="bestMovieResults"></section>
+				<h2>All Results:</h2>
+				<section class="movieResultClass" id="allMoviesResults"></section>
+			</main>
+
+			<!-- eBay section -->
+			<main id="productMain">
+				<form id="productSearchForm">
+					<h1 class="title">Look up an eBay product</h1>
+					<table id="productSearchTable">
+						<tr>
+							<td><label>eBay Product: </label></td>
+							<td><input id="productSearchBox"></input></td>
+						</tr>
+						<tr>
+							<td><label>eBay API Key: </label></td>
+							<td><input id="APIBox"></input></td>
+						</tr>
+					</table>
+					<br><button id="productSearchButton">Search Product</button>
+				</form>
+				<h2>Ebay Products:</h2>
+				<section id="productResults"></section>
+			</main>
+		</main>
+
 		<footer>
-			<p><strong>Contact information:</strong><br><br>
-			hannes.nyberg@gmail.com<br></p>
+			<p class="title"><strong>Contact information:</strong></p>
+			<p>hannes.nyberg@gmail.com<br></p>
 			<a href="">https://github.com/hnyberg</a>
-			<br><br><a href="">Background image</a>
+			<br><br><a href="http://imgur.com/gallery/K3bYZ">Background image source</a>
 		</footer>
 	</main>
 </body>

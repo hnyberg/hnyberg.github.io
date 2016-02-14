@@ -6,66 +6,82 @@
 //	API used:
 // 	http://www.omdbapi.com/?
 // 
-var searchValue;
-var data;
+var movieSearchValue;
+var productSearchValue;
+var mData;
+var eData;
+var bestMovieURL;
+var allMoviesURL;
+var eBayURL;
+var APIKey;
 
 $(document).ready(function(){
-	$("#searchButton").click(function(event){
+
+	// Set search-button for movies
+	$("#movieSearchButton").click(function(event){
 		event.preventDefault();
-		if ($("#searchBox").val() !== ""){
+		if ($("#movieSearchBox").val() !== ""){
 
 			//  Loading screen
-			searchValue = $("#searchBox").val();
-			$(".resultClass").empty().append("<img src='load.gif'>");
+			$(".movieResultClass").empty().append("<img src='load.gif'>");
 			setTimeout(function(){
 
-				// Send REQUESTS, get DATA
+				// Get inputs
+				movieSearchValue = $("#movieSearchBox").val();
+				
+				// Set movie search URLs
+				bestMovieURL = "http://www.omdbapi.com/?t=" 
+				+ movieSearchValue 
+				+ "&tomatoes=true&y=&plot=short&r=json";
+				allMoviesURL = "http://www.omdbapi.com/?s=" 
+				+ movieSearchValue 
+				+ "&tomatoes=true&y=&plot=short&r=json";
 
 				// Get best movie/series result (OMDB)
-				$.getJSON("http://www.omdbapi.com/?t=" + searchValue + "&tomatoes=true&y=&plot=short&r=json", function(data){
-					$("#bestMovieSection").empty();
-					if (data.Response === "False"){
-						$("#bestMovieSection").append("<h3>" 
-							+ data.Error
-							+ "</h3>")
+				$.getJSON(bestMovieURL, function(mData){
+					$("#bestMovieResults").empty();
+					if (mData.Response === "False"){
+						$("#bestMovieResults").append("<h3>" 
+							+ mData.Error
+							+ "</h3>");
 					}
 					else {
-						$("#bestMovieSection").append(
+						$("#bestMovieResults").append(
 							// Start article
 							"<article class='item'>"
 							// Title and year
-							+ "<a href='http://www.imdb.com/title/" + data.imdbID + "'><h3>" + data.Title + "</a> (" + data.Year + ")</h3>"
+							+ "<a href='http://www.imdb.com/title/" + mData.imdbID + "'><h3>" + mData.Title + "</a> (" + mData.Year + ")</h3>"
 							// Genre
-							+ "<p><strong>Genre:</strong> " + data.Genre + "</p>"
+							+ "<p><strong>Genre:</strong> " + mData.Genre + "</p>"
 							// About
-							+ "<p>" + data.Plot + "</p><p>" + data.tomatoConsensus + "</p>"
+							+ "<p>" + mData.Plot + "</p><p>" + mData.tomatoConsensus + "</p>"
 							// Writers
-							+ "<p><strong>Writers:</strong> " + data.Writer + "</p>"
+							+ "<p><strong>Writers:</strong> " + mData.Writer + "</p>"
 							// Actors
-							+ "<p><strong>Actors:</strong> " + data.Actors + "</p>"
+							+ "<p><strong>Actors:</strong> " + mData.Actors + "</p>"
 							// Rating table
-							+ "<table><tr><td><strong>IMDB:</strong></td><td>" + data.imdbRating + "</td></tr>"
-							+ "<tr><td><strong>Rotten (critics):</strong></td><td>" + data.tomatoMeter + " %</td></tr>"
-							+ "<tr><td><strong>Rotten (users):</strong></td><td>" + data.tomatoUserMeter + " %</td></tr>"
-							+ "<tr><td><strong>Metascore:</strong></td><td>" + data.Metascore + " %</td></tr></table>"
+							+ "<table id='ratingTable'><tr><td><strong>IMDB:</strong></td><td>" + mData.imdbRating + "</td></tr>"
+							+ "<tr><td><strong>Rotten (critics):</strong></td><td>" + mData.tomatoMeter + " %</td></tr>"
+							+ "<tr><td><strong>Rotten (users):</strong></td><td>" + mData.tomatoUserMeter + " %</td></tr>"
+							+ "<tr><td><strong>Metascore:</strong></td><td>" + mData.Metascore + " %</td></tr></table>"
 							// Origin and language
-							+ "<p><strong>Language (origin):</strong> " + data.Language + " (" + data.Country + ")</p>"
+							+ "<p><strong>Language (origin):</strong> " + mData.Language + " (" + mData.Country + ")</p>"
 							// End article
 							+ "</article>");
 					}
 				});
 
 				// Get other movie/series results (OMDB)
-				$.getJSON("http://www.omdbapi.com/?s=" + searchValue + "&tomatoes=true&y=&plot=short&r=json", function(data){
-					$("#allMoviesSection").empty();
-					if (data.Response === "False"){
-						$("#allMoviesSection").append("<h3>" 
-							+ data.Error
-							+ "</h3>")
+				$.getJSON(allMoviesURL, function(mData){
+					$("#allMoviesResults").empty();
+					if (mData.Response === "False"){
+						$("#allMoviesResults").append("<h3>" 
+							+ mData.Error
+							+ "</h3>");
 					}
 					else {
-						$.each(data.Search, function(i, o){
-							$("#allMoviesSection").append(
+						$.each(mData.Search, function(i, o){
+							$("#allMoviesResults").append(
 								// Start article
 								"<article class='item'>"
 								// Title and year
@@ -75,9 +91,52 @@ $(document).ready(function(){
 						});
 					}
 				});
+			}, 500);
+		}
+	});
 
-				$("#productSection").empty();
+	// Set search-button for eBay products
+	$("#productSearchButton").click(function(event){
+		event.preventDefault();
+		if ($("#productSearchBox").val() !== ""
+			&& $("#APIBox").val() !== ""){
+
+			//  Loading screen
+			$("#productResults").empty().append("<img src='load.gif'>");
+			setTimeout(function(){
+
+				// Get inputs
+				productSearchValue = $("#productSearchBox").val();
+				APIKey = $("#APIBox").val();
+				APIKey = "Private(-MovieSea-PRD-ad32f3572-693de996";
+
+				// Set URL
+				eBayURL = "http://svcs.ebay.com/services/search/FindingService/v1"
+				+ "?OPERATION-NAME=findItemsByKeywords"
+			    + "&SERVICE-VERSION=1.0.0"
+			    + "&SECURITY-APPNAME=" + APIKey
+			    + "&GLOBAL-ID=EBAY-US"
+			    + "&RESPONSE-DATA-FORMAT=JSON"
+			    + "&jsoncallback=?"
+			    + "&REST-PAYLOAD"
+			    + "&keywords=" + productSearchValue
+			    + "&paginationInput.entriesPerPage=10";
+
+			    eBayURL = "http://svcs.ebay.com/services/search/FindingService/v1?OPERATION-NAME=findItemsByKeywords&SERVICE-VERSION=1.0.0&SECURITY-APPNAME=Private(-MovieSea-PRD-ad32f3572-693de996&GLOBAL-ID=EBAY-US&RESPONSE-DATA-FORMAT=JSON&jsoncallback=_cb_findItemsByKeywords&REST-PAYLOAD&keywords=rrtyrtyrtyrtyrty&paginationInput.entriesPerPage=10";
+
+				// Get best product result (eBay US)
+				$.getJSON(eBayURL, _cb_findItemsByKeywords());
 			}, 500);
 		}
 	});
 });
+
+function _cb_findItemsByKeywords(root){
+	$("#productSection").empty();
+	eData = eData.findItemsByKeywordsResponse[0];
+	if (!eData.searchResult[0].hasOwnProperty("item")){
+		$("#productResults").append("<a href="
+			+ eData.itemSearchURL
+			+ "><h3>No Results</h3></a>");
+	}
+}
