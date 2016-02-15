@@ -108,7 +108,6 @@ $(document).ready(function(){
 				// Get inputs
 				productSearchValue = $("#productSearchBox").val();
 				APIKey = $("#APIBox").val();
-				APIKey = "Private(-MovieSea-PRD-ad32f3572-693de996";
 				productSearchValue = "batman";
 
 				// Set URL
