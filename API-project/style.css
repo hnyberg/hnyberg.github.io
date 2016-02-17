@@ -17,34 +17,32 @@ html {
 	-webkit-flex-direction: row;
 	flex-direction: row;
 	flex-wrap: wrap;
+	padding: 0;
 }
-#movieMain, #productMain {
+.subMain, footer {
 	margin: auto;
-	margin-top: 20px;
-}
-main, footer {
-	text-align: center;
-	margin: auto;
-	margin-top: 20px;
-	padding: 10px;
-}
-#movieMain, #productMain, footer {
-	width: 500px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-bottom: 20px;
 	border-radius: 15px;
 	background-color: rgba(0,0,0,0.8);
 }
-.title {
-	color: #BEE;
+footer {
+	width: 200px;
+	text-align: center;
+	padding-top: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
 }
 table {
 	margin: auto;
 }
-#ratingTable {
-	width: 200px;
-}
-#searchTable {
-	margin: auto;
-	text-align: right;
+label, input, button, .load {
+	width: 80%;
+	margin-left: 10%;
+	margin-right: 10%;
 }
 .item {
 	text-align: left;
@@ -52,29 +50,51 @@ table {
 	margin: 5px;
 	padding: 10px;
 	border-radius: 10px;
+	border: solid rgba(250,180,120,0.5) 3px;
 	background-color: rgba(0,0,0,0.7);
+}
+#ratingTable {
+	width: 200px;
 }
 h1, h2, h3, p, a, td, label {
 	color: #FB7;
 	font-family: Tahoma, Geneva, sans-serif;
 }
 h1 {
-	font-size: 35px;
+	font-size: 25px;
+}
+.title {
+	color: #BEE;
+	text-align: center;
 }
 
 /* Adjust flex positioning */
-@media (max-width: 800px) {
-	#resultSection {
-		/*width: 500px;*/
+@media (max-width: 600px) {
+	.subMain, footer {
+		width: 250px;
+	}
+	table {
+		width: 200px;
+	}
+}
+@media (max-width: 800px) and (min-width: 601px) {
+	.subMain, footer {
+		width: 350px;
+	}
+	table {
+		width: 300px;
 	}
 }
 @media (min-width: 801px) {
-	#resultSection {
-		/*width: 500px;*/
+	.subMain, footer {
+		width: 450px;
+	}
+	table {
+		width: 400px;
 	}
 }
 /* Adjust background size */
-@media (min-width: 371px) {
+/*@media (min-width: 371px) {
 	body {
 		background-size: cover;
 	}
@@ -83,4 +103,4 @@ h1 {
 	body {
 		background-size: initial; 
 	}
-}
+}*/

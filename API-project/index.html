@@ -27,41 +27,67 @@
 		<main id="resultsMain">
 
 			<!-- Movie section -->
-			<main id="movieMain">
-				<form id="movieSearchForm">
-					<h1 class="title">Look up a movie</h1>
-					<table id="movieSearchTable">
+			<main class="subMain">
+				<form>
+					<h1 class="title">Look up a movie<br>(omdbApi.com)</h1>
+					<table>
 						<tr>
-							<td><label>Movie/Series Title: </label></td>
+							<td><label>Movie/Series title: </label></td>
+						</tr>
+						<tr>
 							<td><input id="movieSearchBox"></input></td>
 						</tr>
+						<tr>
+							<td><button id="movieSearchButton"><strong>Search Movie</strong></button></td>
+						</tr>
 					</table>
-					<br><button id="movieSearchButton">Search Movie</button>
 				</form>
-				<h2>Best Result:</h2>
 				<section class="movieResultClass" id="bestMovieResults"></section>
-				<h2>All Results:</h2>
 				<section class="movieResultClass" id="allMoviesResults"></section>
 			</main>
 
-			<!-- product section -->
-			<main id="productMain">
-				<form id="productSearchForm">
-					<h1 class="title">Look up a product</h1>
-					<table id="productSearchTable">
+			<!-- eBay section -->
+			<main class="subMain">
+				<form>
+					<h1 class="title">Look up a product<br>(ebay.com)</h1>
+					<table>
 						<tr>
-							<td><label>Product: </label></td>
-							<td><input id="productSearchBox"></input></td>
+							<td><label>Product name: </label></td>
+							<td><label>eBay API Key: </label></td>
 						</tr>
 						<tr>
-							<td><label>API Key: </label></td>
-							<td><input id="APIBox"></input></td>
+							<td><input id="productSearchBox"></input></td>
+							<td><input id="productAPIBox"></input></td>
+						</tr>
+						<tr>
+							<td colspan="2"><button id="productSearchButton"><strong>Search Product</strong></button></td>
 						</tr>
 					</table>
-					<br><button id="productSearchButton">Search Product</button>
 				</form>
-				<h2>Products:</h2>
 				<section id="productResults"></section>
+			</main>
+
+			<!-- App section -->
+			<main class="subMain">
+				<form>
+					<h1 class="title">Look up an app<br>(42matters.com)</h1>
+					<table>
+						<tr>
+							<td><label>App name: </label></td>
+							<td><label>App API Key: </label></td>
+						</tr>
+						<tr>
+							<td><input id="appSearchBox"></input></td>
+							<td><input id="appAPIBox"></input></td>
+						</tr>
+						<tr>
+							<td colspan="2">
+								<button id="appSearchButton"><strong>Search App</strong></button>
+							</td>
+						</tr>
+					</table>
+				</form>
+				<section id="appResults"></section>
 			</main>
 		</main>
 
