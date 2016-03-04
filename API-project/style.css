@@ -4,12 +4,15 @@
 	https://github.com/hnyberg
 */
 html {
-	background: url(night.png) no-repeat center center fixed;
+	background: url(astrocat.jpg) no-repeat center center fixed;
 	-webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
   	background-size: cover;
 	background-color: #111;
+}
+#allMain {
+
 }
 #resultsMain {
 	display: -webkit-flex;
@@ -19,7 +22,7 @@ html {
 	flex-wrap: wrap;
 	padding: 0;
 }
-.subMain, footer {
+.subMain {
 	margin: auto;
 	margin-top: 10px;
 	margin-bottom: 10px;
@@ -27,14 +30,15 @@ html {
 	padding-right: 20px;
 	padding-bottom: 20px;
 	border-radius: 15px;
-	background-color: rgba(0,0,0,0.8);
+	background-color: rgba(0,0,0,0.9);
 }
-footer {
-	width: 200px;
-	text-align: center;
+header, footer {
 	padding-top: 10px;
 	padding-left: 10px;
 	padding-right: 10px;
+}
+article {
+	margin-left: 40px;
 }
 table {
 	margin: auto;
@@ -57,20 +61,21 @@ label, input, button, .load {
 	width: 200px;
 }
 h1, h2, h3, p, a, td, label {
-	color: #FB7;
+	color: #E96;
 	font-family: Tahoma, Geneva, sans-serif;
 }
 h1 {
 	font-size: 25px;
-}
-.title {
-	color: #BEE;
 	text-align: center;
+	color: #9AA;
+}
+.headerTitle {
+	font-size: 30px;
 }
 
-/* Adjust flex positioning */
+/* Adjust sections' widths */
 @media (max-width: 600px) {
-	.subMain, footer {
+	.subMain {
 		width: 250px;
 	}
 	table {
@@ -78,7 +83,7 @@ h1 {
 	}
 }
 @media (max-width: 800px) and (min-width: 601px) {
-	.subMain, footer {
+	.subMain {
 		width: 350px;
 	}
 	table {
@@ -86,21 +91,10 @@ h1 {
 	}
 }
 @media (min-width: 801px) {
-	.subMain, footer {
+	.subMain {
 		width: 450px;
 	}
 	table {
 		width: 400px;
 	}
 }
-/* Adjust background size */
-/*@media (min-width: 371px) {
-	body {
-		background-size: cover;
-	}
-}
-@media (max-width: 370px) {
-	body {
-		background-size: initial; 
-	}
-}*/

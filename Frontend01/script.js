@@ -95,8 +95,8 @@ function updateDisplays(){
 	for (i in trees){
 		numCharacters += trees[i].size;
 	}
-	$('#charDisplay').text("Characters: " + numCharacters);
+	$('#charDisplay').text("Characters in forest: " + numCharacters);
 	
 	// Update number of trees
-	$('#treeDisplay').text("Trees: " + trees.length);
+	$('#treeDisplay').text("Trees in forest: " + trees.length);
 }

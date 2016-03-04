@@ -1,9 +1,10 @@
 body {
-	background-image: url("winter.jpg");
+	background-image: url("bgs/leaves.png");
 	background-repeat: no-repeat;
+	background-size: cover;
 
 	font-family: Georgia, serif;
-	color: white;
+	color: #BFB;
 	font-size: 16px;
 }
 h2, p {
@@ -16,45 +17,38 @@ a {
 h1 {
 	font-size: 35px;
 }
-.container {
+#main {
 	margin: auto;
 	margin-top: 30px;
 }
-header {
+.menu {
 	background: linear-gradient(
 		to bottom, 
-		rgba(30,30,40,0), 
-		rgba(20,20,30,0.6));
+		rgba(30,30,40,0.5), 
+		rgba(20,20,30,0.8));
 	padding: 20px;
 	text-align: center;
-}
-header, .menu {
 	border-radius: 15px;
 	border-bottom: solid black 3px;
 	margin: 20px;
 }
-.menu {
-	background:
-		linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px,
-		linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0px,
-		linear-gradient(27deg, #222 5px, transparent 5px) 0px 10px,
-		linear-gradient(207deg, #222 5px, transparent 5px) 10px 5px,
-		linear-gradient(90deg, #1b1b1b 10px, transparent 10px),
-		linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424);
-		background-color: #131313;
-		background-size: 20px 20px;
-}
-.menu a:nth-child(even) .item {
-	background:
-		linear-gradient(27deg, #152545 5px, transparent 5px) 0 5px,
-		linear-gradient(207deg, #152545 5px, transparent 5px) 10px 0px,
-		linear-gradient(27deg, #234 5px, transparent 5px) 0px 10px,
-		linear-gradient(207deg, #234 5px, transparent 5px) 10px 5px,
-		linear-gradient(90deg, #1b2b4b 10px, transparent 10px),
-		linear-gradient(#1d2d4d 25%, #1a2a4a 25%, #1a2a4a 50%, transparent 50%, transparent 75%, #243444 75%, #243444);
-		background-color: #132343;
-		background-size: 20px 20px;
-}
 .item {
 	padding: 20px;
+	border-top: 2px solid black;
+}
+/* Adjust sections' widths */
+@media (max-width: 600px) {
+	#main{
+		width: 350px;
+	}
+}
+@media (max-width: 800px) and (min-width: 601px) {
+	#main{
+		width: 450px;
+	}
+}
+@media (min-width: 801px) {
+	#main{
+		width: 550px;
+	}
 }
