@@ -4,32 +4,10 @@
 	https://github.com/hnyberg
 */
 
-/* Adjust container (all elements) */
-@media (max-width: 500px) {
-	.container {
-		width: 300px;
-	}
-}
-@media (min-width: 501px) {
-	.container {
-		width: 500px;
-	}
-}
-/* Adjust background image size */
-@media (min-width: 371px) {
-	body {
-		background-size: cover; 
-	}
-}
-@media (max-width: 370px) {
-	body {
-		background-size: initial; 
-	}
-}
-
 body {
 	background-image: url("forest.jpg");
 	background-repeat: no-repeat;
+	background-size: cover; 
 	background-color: #112211;
 	margin: 0;
 	padding: 0;
@@ -39,14 +17,18 @@ body {
 	text-align: center;
 	color: white;
 }
+h1 {
+	font-size: 40px;
+  	background: -webkit-linear-gradient(#FFA, #FAA);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+p {
+	margin: 5px;
+}
 a {
 	color: white;
 }
-h1 {
-	font-size: 40px;
-}
-
-/* Set web page size */
 .container {
 	margin: auto;
 	margin-top: 30px;
@@ -58,7 +40,7 @@ header, .menu, .item, footer {
 	border-radius: 15px;
 	border-bottom: solid black 2px;
 	margin: 10px;
-	padding: 5px;
+	padding: 20px;
 }
 header, .menu, footer {
 	background: linear-gradient(
@@ -112,4 +94,21 @@ button {
 	box-shadow: 10px -25px 50px #DD9933;
 	background-color: #DD9933;
 	color: #DD9933;
+}
+
+/* Adjust sections' widths */
+@media (max-width: 600px) {
+	.container {
+		width: 300px;
+	}
+}
+@media (max-width: 800px) and (min-width: 601px) {
+	.container {
+		width: 400px;
+	}
+}
+@media (min-width: 801px) {
+	.container {
+		width: 500px;
+	}
 }
